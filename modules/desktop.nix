@@ -1,0 +1,45 @@
+{ config, pkgs, ... }:
+
+{
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    noctalia-shell
+    fuzzel
+    swaylock
+    xwayland-satellite
+  ];
+
+  programs.hyprland = {
+    enable = true;
+  };
+
+  programs.niri = {
+    enable = true;
+  };
+
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5 = {
+      addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-gtk
+        qt6Packages.fcitx5-chinese-addons
+        fcitx5-rime           # Rime 输入法引擎
+        qt6Packages.fcitx5-configtool     # 图形化配置工具
+        fcitx5-pinyin-zhwiki  # 拼音词库（维基百科词条）
+        fcitx5-pinyin-moegirl # 拼音词库（萌娘百科）
+      ];
+      waylandFrontend = true;
+    };
+  };
+  environment.variables = {
+    # QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+    SDL_IM_MODULE = "fcitx";
+    GLFW_IM_MODULE = "ibus";
+    INPUT_METHOD = "fcitx";
+  };
+}
