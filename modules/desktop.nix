@@ -9,6 +9,7 @@
     fuzzel
     swaylock
     xwayland-satellite
+    kdePackages.plasma-browser-integration
   ];
 
   programs.hyprland = {

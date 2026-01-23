@@ -55,6 +55,7 @@
     # amusement
     # steamcmd
     # steam-tui
+    graalvmPackages.graalvm-oracle
 
     # GUI
     zen-browser
