@@ -90,6 +90,10 @@
     autoStart = true;
   };
 
+  programs.bat = {
+    enable = true;
+  };
+
   programs.neovim = {
     enable = true;
 
