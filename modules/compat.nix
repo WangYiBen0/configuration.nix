@@ -8,10 +8,10 @@
 
     wine-staging
   ];
-  
+
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [];
+    libraries = with pkgs; [ ];
   };
 
   services.flatpak.enable = true;

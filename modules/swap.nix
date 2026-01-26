@@ -1,10 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  swapDevices = [{ 
-    device = "/swap/swapfile"; 
-    size = 16*1024; # Creates an 16GB swap file 
-  }];
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 16 * 1024; # Creates an 16GB swap file
+    }
+  ];
   boot.kernelParams = [
     "zswap.enabled=1" # enables zswap
     "zswap.compressor=lz4" # compression algorithm

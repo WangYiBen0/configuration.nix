@@ -18,9 +18,19 @@
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      sansSerif = [ "Noto Sans CJK SC" "Symbols Nerd Font" ];
-      serif = [ "Noto Serif CJK SC" "Symbols Nerd Font" ];
-      monospace = [ "Maple Mono NF CN" "JetBrains Mono" "Symbols Nerd Font" ];
+      sansSerif = [
+        "Noto Sans CJK SC"
+        "Symbols Nerd Font"
+      ];
+      serif = [
+        "Noto Serif CJK SC"
+        "Symbols Nerd Font"
+      ];
+      monospace = [
+        "Maple Mono NF CN"
+        "JetBrains Mono"
+        "Symbols Nerd Font"
+      ];
       emoji = [ "Noto Color Emoji" ];
     };
 

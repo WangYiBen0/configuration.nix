@@ -1,4 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -53,13 +57,10 @@
     nix-index
 
     # amusement
-    # steamcmd
-    # steam-tui
     graalvmPackages.graalvm-oracle
 
     # GUI
     zen-browser
-    # inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   environment.variables = {
@@ -79,7 +80,7 @@
   programs.fish.enable = true;
   programs.zsh = {
     enable = true;
-    # enableCompletion = false; 
+    enableBashCompletion = false;
   };
 
   programs.steam.enable = true;
@@ -92,6 +93,10 @@
 
   programs.bat = {
     enable = true;
+  };
+
+  environment.shellAliases = {
+    cat = "bat --paging never --style plain";
   };
 
   programs.neovim = {

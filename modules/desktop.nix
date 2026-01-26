@@ -28,10 +28,10 @@
         fcitx5-mozc
         fcitx5-gtk
         qt6Packages.fcitx5-chinese-addons
-        fcitx5-rime           # Rime 输入法引擎
-        qt6Packages.fcitx5-configtool     # 图形化配置工具
-        fcitx5-pinyin-zhwiki  # 拼音词库（维基百科词条）
-        fcitx5-pinyin-moegirl # 拼音词库（萌娘百科）
+        fcitx5-rime
+        qt6Packages.fcitx5-configtool
+        fcitx5-pinyin-zhwiki
+        fcitx5-pinyin-moegirl
       ];
       waylandFrontend = true;
     };

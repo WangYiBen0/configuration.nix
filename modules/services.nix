@@ -21,4 +21,6 @@
   };
 
   services.openssh.enable = true;
+
+  services.blueman.enable = true;
 }
