@@ -3,7 +3,6 @@
 {
   imports = [
     ./nix.nix
-    ./swap.nix
     ./system.nix
     ./font.nix
     ./desktop.nix
