@@ -56,7 +56,7 @@
     device = "/dev/disk/by-uuid/8460766a-baec-49ac-89ea-156c59bffd97";
     fsType = "btrfs";
     options = [
-      "subvol=nixos/@swap"
+      "subvol=@swap"
       "noatime"
     ];
   };
