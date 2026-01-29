@@ -35,10 +35,16 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
     {
-
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
+      self,
+      nixpkgs,
+      flake-utils,
+      ...
+    }@inputs:
+    flake-utils.lib.eachDefaultSystem (system: {
+      formatter = nixpkgs.legacyPackages.${system}.nixfmt-tree;
+    })
+    // {
 
       nixosConfigurations = {
         nixos-matebook16d = nixpkgs.lib.nixosSystem {

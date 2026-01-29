@@ -40,6 +40,7 @@
     tree-sitter
     clang-tools
     tree
+    lftp
 
     # im
     wechat
@@ -55,6 +56,7 @@
     nh
     home-manager
     nix-index
+    nix-inspect
 
     # amusement
     graalvmPackages.graalvm-oracle
