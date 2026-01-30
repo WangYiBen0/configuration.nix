@@ -93,14 +93,6 @@
     autoStart = true;
   };
 
-  programs.bat = {
-    enable = true;
-  };
-
-  environment.shellAliases = {
-    cat = "bat --paging never --style plain";
-  };
-
   programs.neovim = {
     enable = true;
 
