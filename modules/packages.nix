@@ -81,6 +81,13 @@
       enableBashCompletion = false;
     };
 
+    direnv = {
+      enable = true;
+      nix-direnv = {
+        enable = true;
+      };
+    };
+
     steam.enable = true;
 
     clash-verge = {
