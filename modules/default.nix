@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+_: {
   imports = [
     ./nix.nix
     ./system.nix

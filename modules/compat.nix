@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     patchelf
@@ -11,7 +10,7 @@
 
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [ ];
+    libraries = pkgs.steam-run.args.multiPkgs pkgs;
   };
 
   services.flatpak.enable = true;

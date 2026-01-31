@@ -1,5 +1,3 @@
-{ config, ... }:
-{
+_: {
   networking.hostName = "nixos-sxyz-9";
-
 }

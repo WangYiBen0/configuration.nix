@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
-
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     # basic
@@ -69,34 +64,36 @@
     EDITOR = "nvim";
   };
 
-  programs.firefox.enable = true;
+  programs = {
+    firefox.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    mtr.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
 
-  programs.fish.enable = true;
-  programs.zsh = {
-    enable = true;
-    enableBashCompletion = false;
-  };
+    fish.enable = true;
+    zsh = {
+      enable = true;
+      enableBashCompletion = false;
+    };
 
-  programs.steam.enable = true;
+    steam.enable = true;
 
-  programs.clash-verge = {
-    enable = true;
-    tunMode = true;
-    autoStart = true;
-  };
+    clash-verge = {
+      enable = true;
+      tunMode = true;
+      autoStart = true;
+    };
 
-  programs.neovim = {
-    enable = true;
+    neovim = {
+      enable = true;
 
-    viAlias = true;
-    vimAlias = true;
+      viAlias = true;
+      vimAlias = true;
+    };
   };
 }
