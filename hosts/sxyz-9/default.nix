@@ -3,6 +3,6 @@ _: {
     ./bootloader.nix
     ./hardware-configuration.nix
     ./hostname.nix
-    ./state
+    ./state-version.nix
   ];
 }
