@@ -37,6 +37,8 @@
     tree
     lftp
 
+    libreoffice-qt
+
     # im
     wechat
     qq
@@ -52,6 +54,7 @@
     home-manager
     nix-index
     nix-inspect
+    manix
 
     # amusement
     graalvmPackages.graalvm-oracle

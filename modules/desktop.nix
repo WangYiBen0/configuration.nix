@@ -35,6 +35,7 @@
       waylandFrontend = true;
     };
   };
+
   environment.variables = {
     # QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
