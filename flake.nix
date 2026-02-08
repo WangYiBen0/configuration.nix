@@ -13,11 +13,6 @@
     #   url = "github:nix-community/NUR";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-
-    # nixos-cn = {
-    #   url = "github:nixos-cn/flakes";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   outputs =
