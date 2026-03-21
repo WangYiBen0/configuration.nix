@@ -30,7 +30,7 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/abbaefc5-b276-43ee-a5f8-eb50e46c24a5";
+      device = "/dev/disk/by-uuid/76ff1ed4-5cca-473e-8707-7ec3ef6c3c4a";
       fsType = "btrfs";
       options = [
         "subvol=nixos/@"
@@ -39,7 +39,7 @@
     };
 
     "/home" = {
-      device = "/dev/disk/by-uuid/abbaefc5-b276-43ee-a5f8-eb50e46c24a5";
+      device = "/dev/disk/by-uuid/76ff1ed4-5cca-473e-8707-7ec3ef6c3c4a";
       fsType = "btrfs";
       options = [
         "subvol=nixos/@home"
@@ -48,7 +48,7 @@
     };
 
     "/nix" = {
-      device = "/dev/disk/by-uuid/abbaefc5-b276-43ee-a5f8-eb50e46c24a5";
+      device = "/dev/disk/by-uuid/76ff1ed4-5cca-473e-8707-7ec3ef6c3c4a";
       fsType = "btrfs";
       options = [
         "subvol=nixos/@nix"
@@ -57,7 +57,17 @@
     };
 
     "/boot" = {
-      device = "/dev/disk/by-uuid/76BC-04A2";
+      device = "/dev/disk/by-uuid/76ff1ed4-5cca-473e-8707-7ec3ef6c3c4a";
+      fsType = "btrfs";
+      options = [
+        "subvol=nixos/@boot"
+        "compress=none"
+        "nodatacow"
+      ];
+    };
+
+    "/boot/efi" = {
+      device = "/dev/disk/by-uuid/F33D-19C4";
       fsType = "vfat";
       options = [
         "fmask=0077"
@@ -66,7 +76,7 @@
     };
 
     "/swap" = {
-      device = "/dev/disk/by-uuid/abbaefc5-b276-43ee-a5f8-eb50e46c24a5";
+      device = "/dev/disk/by-uuid/76ff1ed4-5cca-473e-8707-7ec3ef6c3c4a";
       fsType = "btrfs";
       options = [
         "subvol=nixos/@swap"
