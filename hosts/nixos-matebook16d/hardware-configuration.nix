@@ -57,12 +57,11 @@
     };
 
     "/boot" = {
-      device = "/dev/disk/by-uuid/76ff1ed4-5cca-473e-8707-7ec3ef6c3c4a";
-      fsType = "btrfs";
+      device = "/dev/disk/by-uuid/B380-E5B9";
+      fsType = "vfat";
       options = [
-        "subvol=nixos/@boot"
-        "compress=none"
-        "nodatacow"
+        "fmask=0077"
+        "dmask=0077"
       ];
     };
 
@@ -81,6 +80,7 @@
       options = [
         "subvol=nixos/@swap"
         "noatime"
+        "nodatacow"
       ];
     };
   };
