@@ -26,6 +26,7 @@
       # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
       auto-optimise-store = true;
     };
+
     # do garbage collection weekly to keep disk usage low
 
     gc = {

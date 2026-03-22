@@ -40,7 +40,7 @@
     libreoffice-qt
 
     # im
-    wechat
+    #wechat
     qq
 
     # develop
