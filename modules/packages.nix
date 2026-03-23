@@ -36,6 +36,7 @@
     clang-tools
     tree
     lftp
+    clock-rs
 
     libreoffice-qt
 
@@ -58,6 +59,7 @@
 
     # amusement
     graalvmPackages.graalvm-oracle
+    hmcl
 
     # GUI
     zen-browser
