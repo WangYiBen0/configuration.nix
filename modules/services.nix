@@ -22,6 +22,8 @@
     openssh.enable = true;
 
     blueman.enable = true;
+
+    kmscon.enable = true;
   };
 
   security.rtkit.enable = true;

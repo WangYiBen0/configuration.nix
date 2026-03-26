@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   fonts = {
+    enableDefaultPackages = true;
+
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
@@ -13,6 +15,7 @@
       liberation_ttf
       inter
       winePackages.fonts
+      texlivePackages.fandol
     ];
 
     fontconfig = {

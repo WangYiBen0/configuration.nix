@@ -12,6 +12,11 @@
     zimfw
     starship
     file
+    zip
+    unzip
+    rar
+    unrar
+    p7zip
 
     # utils
     fastfetch
@@ -51,6 +56,7 @@
     texliveFull
 
     # nix
+    comma
     nh
     home-manager
     nix-index
