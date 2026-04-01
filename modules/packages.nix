@@ -44,6 +44,7 @@
     clock-rs
 
     libreoffice-qt
+    inkscape
 
     # im
     #wechat
