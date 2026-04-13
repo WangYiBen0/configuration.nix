@@ -16,6 +16,12 @@
       inter
       winePackages.fonts
       texlivePackages.fandol
+      source-han-sans
+      source-han-serif
+      source-han-mono
+      source-code-pro
+      source-sans
+      source-serif
     ];
 
     fontconfig = {
