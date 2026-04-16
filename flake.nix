@@ -2,7 +2,7 @@
   description = "W1ngD1nGa5ter's NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
