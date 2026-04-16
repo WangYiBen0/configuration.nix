@@ -100,7 +100,19 @@
       };
     };
 
-    steam.enable = true;
+    steam = {
+      enable = true;
+      protontricks = {
+        enable = true;
+      };
+      extest = {
+        enable = true;
+      };
+    };
+
+    gamescope = {
+      enable = true;
+    };
 
     clash-verge = {
       enable = true;
