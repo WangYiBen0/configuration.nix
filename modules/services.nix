@@ -34,4 +34,6 @@
       allowedUDPPorts = [ 25565 ];
     };
   };
+
+  systemd.services."kmsconvt@tty1".enable = false;
 }
