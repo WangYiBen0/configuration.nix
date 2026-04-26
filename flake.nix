@@ -17,6 +17,11 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
+
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -24,11 +29,37 @@
       self,
       nixpkgs,
       flake-utils,
+      pre-commit-hooks,
       ...
     }@inputs:
-    flake-utils.lib.eachDefaultSystem (system: {
-      formatter = nixpkgs.legacyPackages.${system}.nixfmt-tree;
-    })
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        formatter = pkgs.nixfmt-tree;
+
+        checks = {
+          pre-commit-check = pre-commit-hooks.lib.${system}.run {
+            src = ./.;
+            hooks = {
+              nixfmt.enable = true;
+              deadnix.enable = true;
+              statix.enable = true;
+            };
+          };
+        };
+
+        devShells = {
+          default =
+            with pkgs;
+            mkShell {
+              inherit (self.checks.${system}.pre-commit-check) shellHook;
+            };
+        };
+      }
+    )
     // {
 
       nixosConfigurations = {

@@ -1,4 +1,3 @@
-{ _pkgs, ... }:
 {
   services = {
     # Enable CUPS to print documents.

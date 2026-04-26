@@ -1,4 +1,3 @@
-{ _pkgs, ... }:
 {
   # Bootloader.
   boot = {
