@@ -23,6 +23,10 @@
     blueman.enable = true;
 
     kmscon.enable = true;
+
+    btrfs.autoScrub = {
+      enable = true;
+    };
   };
 
   security.rtkit.enable = true;
