@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
+  imports = [ inputs.niri-flake.nixosModules.niri ];
+
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
