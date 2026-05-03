@@ -21,6 +21,7 @@
     # utils
     fastfetch
     btop
+    brightnessctl
     yazi
     ripgrep
     zellij
