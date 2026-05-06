@@ -34,8 +34,14 @@
   networking = {
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 25565 ];
-      allowedUDPPorts = [ 25565 ];
+      allowedTCPPorts = [ 25565 ]; # for Minecraft servers
+      allowedUDPPorts = [ 25565 ]; # for Minecraft servers
+
+      # for clash-verge-rev TUN mode
+      trustedInterfaces = [ "Mihomo" ];
+      extraReversePathFilterRules = ''
+        iifname "Mihomo" accept
+      '';
     };
   };
 
