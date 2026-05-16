@@ -9,9 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri-flake = {
-      url = "github:sodiboo/niri-flake";
-    };
+    # niri-flake = {
+    #   url = "github:sodiboo/niri-flake";
+    # };
 
     nixpkgs-python = {
       url = "github:cachix/nixpkgs-python";

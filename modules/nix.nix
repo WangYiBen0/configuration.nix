@@ -18,7 +18,7 @@
         "https://mirror.sjtu.edu.cn/nix-channels/store"
         "https://nix-community.cachix.org"
         "https://zen-browser.cachix.org"
-        "https://niri.cachix.org"
+        # "https://niri.cachix.org"
         "https://cache.nixos.org"
         "https://nixpkgs-python.cachix.org"
       ];
