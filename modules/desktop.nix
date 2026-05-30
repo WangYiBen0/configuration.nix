@@ -11,6 +11,11 @@
     kdePackages.plasma-browser-integration
   ];
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  };
+
   programs.hyprland = {
     enable = true;
   };
