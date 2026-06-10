@@ -9,83 +9,74 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # niri-flake = {
-    #   url = "github:sodiboo/niri-flake";
-    # };
-
     nixpkgs-python = {
       url = "github:cachix/nixpkgs-python";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-    };
-
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
+    git-hooks-nix = {
+      url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
-      pre-commit-hooks,
-      ...
-    }@inputs:
-    flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      in
-      {
-        formatter = pkgs.nixfmt-tree;
+    { flake-parts, ... }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
 
-        checks = {
-          pre-commit-check = pre-commit-hooks.lib.${system}.run {
-            src = ./.;
-            hooks = {
-              nixfmt.enable = true;
-              deadnix.enable = true;
-              statix.enable = true;
+      imports = [
+        inputs.git-hooks-nix.flakeModule
+      ];
+
+      perSystem =
+        {
+          config,
+          pkgs,
+          ...
+        }:
+        {
+          formatter = pkgs.nixfmt-tree;
+
+          pre-commit = {
+            settings = {
+              hooks = {
+                nixfmt.enable = true;
+                deadnix.enable = true;
+                statix.enable = true;
+              };
             };
+          };
+
+          devShells.default = pkgs.mkShell {
+            inherit (config.pre-commit) shellHook;
           };
         };
 
-        devShells = {
-          default =
-            with pkgs;
-            mkShell {
-              inherit (self.checks.${system}.pre-commit-check) shellHook;
-            };
-        };
-      }
-    )
-    // {
+      flake = {
+        nixosConfigurations = {
+          nixos-matebook16d = inputs.nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = [
+              ./configuration.nix
+              ./hosts/nixos-matebook16d
+            ];
+          };
 
-      nixosConfigurations = {
-        nixos-matebook16d = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./configuration.nix
-            ./hosts/nixos-matebook16d
-          ];
-        };
-
-        nixos-sxyz-9 = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./configuration.nix
-            ./hosts/nixos-sxyz-9
-          ];
+          nixos-sxyz-9 = inputs.nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = [
+              ./configuration.nix
+              ./hosts/nixos-sxyz-9
+            ];
+          };
         };
       };
-
     };
 }

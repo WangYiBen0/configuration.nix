@@ -52,7 +52,6 @@
     qq
 
     # develop
-    vscode
     gcc
     clang
     texliveFull
