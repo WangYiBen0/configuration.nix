@@ -27,8 +27,6 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
-        "aarch64-linux"
-        "aarch64-darwin"
       ];
 
       imports = [
@@ -61,19 +59,19 @@
 
       flake = {
         nixosConfigurations = {
-          nixos-matebook16d = inputs.nixpkgs.lib.nixosSystem {
+          matebook16d = inputs.nixpkgs.lib.nixosSystem {
             specialArgs = { inherit inputs; };
             modules = [
               ./configuration.nix
-              ./hosts/nixos-matebook16d
+              ./hosts/matebook16d
             ];
           };
 
-          nixos-sxyz-9 = inputs.nixpkgs.lib.nixosSystem {
+          sxyz-9 = inputs.nixpkgs.lib.nixosSystem {
             specialArgs = { inherit inputs; };
             modules = [
               ./configuration.nix
-              ./hosts/nixos-sxyz-9
+              ./hosts/sxyz-9
             ];
           };
         };
