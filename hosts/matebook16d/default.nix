@@ -1,7 +1,8 @@
 _: {
   imports = [
     ./bootloader.nix
-    ./hardware-configuration.nix
+    ./disko.nix
+    ./hardware.nix
   ];
 
   networking.hostName = import ./hostname.nix;
