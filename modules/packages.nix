@@ -43,6 +43,8 @@
     tree
     lftp
     clock-rs
+    trashy
+    wiremix
 
     libreoffice-qt
     inkscape

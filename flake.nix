@@ -74,6 +74,14 @@
               ./hosts/sxyz-9
             ];
           };
+
+          sxyz-89 = inputs.nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = [
+              ./configuration.nix
+              ./hosts/sxyz-89
+            ];
+          };
         };
       };
     };
