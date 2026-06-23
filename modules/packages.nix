@@ -32,7 +32,6 @@
     xclip
     wayland-utils
     xdg-utils
-    clash-verge-rev
     kdePackages.partitionmanager
     gnome-tweaks
     tealdeer

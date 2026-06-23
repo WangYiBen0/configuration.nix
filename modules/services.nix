@@ -48,13 +48,5 @@
     };
   };
 
-  programs = {
-    clash-verge = {
-      enable = true;
-      serviceMode = true;
-      autoStart = true;
-    };
-  };
-
   systemd.services."kmsconvt@tty1".enable = false;
 }

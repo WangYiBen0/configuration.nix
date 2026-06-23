@@ -1,11 +1,12 @@
 _: {
   imports = [
-    ./nix.nix
-    ./system.nix
-    ./font.nix
+    ./compat.nix
+    ./dae.nix
     ./desktop.nix
+    ./font.nix
+    ./nix.nix
     ./packages.nix
     ./services.nix
-    ./compat.nix
+    ./system.nix
   ];
 }

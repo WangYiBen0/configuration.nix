@@ -16,14 +16,16 @@
         "https://mirrors.ustc.edu.cn/nix-channels/store"
         "https://mirrors.cernet.edu.cn/nix-channels/store"
         "https://mirror.sjtu.edu.cn/nix-channels/store"
+        "https://cache.garnix.io"
         "https://nix-community.cachix.org"
-        "https://zen-browser.cachix.org"
-        # "https://niri.cachix.org"
-        "https://cache.nixos.org"
         "https://nixpkgs-python.cachix.org"
+        "https://zen-browser.cachix.org"
+        "https://niri.cachix.org"
+        "https://cache.nixos.org"
       ];
 
       trusted-public-keys = [
+        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "nixpkgs-python.cachix.org-1:hE2u9Uf61K1CBe068x7FpScS5pZz87nS6Riz2O4p5vU="
         "zen-browser.cachix.org-1:z/QLGrEkiBYF/7zoHX1Hpuv0B26QrmbVBSy9yDD2tSs="
