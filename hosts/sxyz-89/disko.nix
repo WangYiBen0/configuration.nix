@@ -6,7 +6,7 @@
 
   disko.devices = {
     disk = {
-      nvme0n1 = {
+      sda = {
         type = "disk";
         device = "/dev/disk/by-id/ata-ST1000DM003-1SB102_Z9A9TC2K";
         content = {
@@ -46,9 +46,6 @@
               type = "0FC63DAF-8483-4772-8E79-3D69D8477DE4"; # Linux 文件系统
               size = "16G";
               label = "zramWriteback";
-              content = {
-                type = "raw"; # 不创建文件系统，保持原始块设备
-              };
             };
 
             LinuxSystemPartition = {
