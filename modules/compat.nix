@@ -8,6 +8,8 @@
     distrobox
 
     wine-staging
+    winetricks
+    mono
   ];
 
   programs.nix-ld = {
