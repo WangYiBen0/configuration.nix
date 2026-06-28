@@ -19,6 +19,8 @@
       ++ (with pkgs; [
         stdenv.cc.cc
         icu
+        libgdiplus
+        gtk2-x11
       ]);
   };
 
