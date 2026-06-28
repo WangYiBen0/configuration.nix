@@ -7,8 +7,8 @@
     daeuniverse = {
       url = "github:daeuniverse/flake.nix";
       inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
+        # flake-parts.follows = "flake-parts";
+        # nixpkgs.follows = "nixpkgs";
       };
     };
 

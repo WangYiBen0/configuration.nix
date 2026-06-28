@@ -15,11 +15,10 @@
   programs.nix-ld = {
     enable = true;
     libraries =
-      (pkgs.steam-run.args.multiPkgs pkgs)
+      (pkgs.appimage-run.args.multiPkgs pkgs)
       ++ (with pkgs; [
+        stdenv.cc.cc
         icu
-        openssl
-        zlib
       ]);
   };
 
