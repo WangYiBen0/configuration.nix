@@ -68,9 +68,6 @@
     # amusement
     graalvmPackages.graalvm-oracle
     hmcl
-
-    # GUI
-    zen-browser
   ];
 
   environment.variables = {

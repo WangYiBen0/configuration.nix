@@ -9,6 +9,8 @@
 
     wine-staging
     winetricks
+    bottles
+
     mono
   ];
 
