@@ -6,9 +6,9 @@
 
   disko.devices = {
     disk = {
-      sda = {
+      ata-ST1000DM003-1SB102_Z9A9TC2K = {
         type = "disk";
-        device = "/dev/disk/by-id/ata-ST1000DM003-1SB102_Z9A9TC2K";
+        device = "/dev/disk/by-id/wwn-0x5000c500a1c2787e";
         content = {
           type = "gpt";
           partitions = {
@@ -66,6 +66,13 @@
                   "nixos/@nix" = {
                     mountpoint = "/nix";
                     mountOptions = [ "compress=zstd" ];
+                  };
+                  "nixos/@swap" = {
+                    mountpoint = "/var/lib/swap";
+                    mountOptions = [
+                      "noatime"
+                      "nodatacow"
+                    ];
                   };
                 };
               };

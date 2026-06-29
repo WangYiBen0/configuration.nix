@@ -23,6 +23,13 @@
     extraModulePackages = [ ];
   };
 
+  swapDevices = [
+    {
+      device = "/var/lib/swap/swapfile";
+      size = 16 * 1024;
+    }
+  ];
+
   zramSwap = {
     enable = true;
     writebackDevice = "/dev/disk/by-partlabel/zramWriteback";

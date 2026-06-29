@@ -18,8 +18,8 @@
         "https://mirror.sjtu.edu.cn/nix-channels/store"
         "https://cache.garnix.io"
         "https://nix-community.cachix.org"
+        "https://catppuccin.cachix.org"
         "https://nixpkgs-python.cachix.org"
-        "https://zen-browser.cachix.org"
         "https://niri.cachix.org"
         "https://cache.nixos.org"
       ];
@@ -27,8 +27,8 @@
       trusted-public-keys = [
         "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "nixpkgs-python.cachix.org-1:hE2u9Uf61K1CBe068x7FpScS5pZz87nS6Riz2O4p5vU="
-        "zen-browser.cachix.org-1:z/QLGrEkiBYF/7zoHX1Hpuv0B26QrmbVBSy9yDD2tSs="
+        "catppuccin.cachix.org-1:noG/4HkbhJb+lUAdKrph6LaozJvAeEEZj4N732IysmU="
+        "nixpkgs-python.cachix.org-1:hxjI7pFxTyuTHn2NkvWCrAUcNZLNS3ZAvfYNuYifcEU="
         "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
